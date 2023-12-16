@@ -47,8 +47,8 @@ const currentProduct = products[Currentimage];
 
   return (
     <>
-      <section className=" mt-[3rem] lg:mt-[10rem]  relative lg:top-[20rem] ">
-        <div className="lg:hidden ">
+      <section className=" mt-[3rem]   relative  ">
+        <div className="lg:hidden md:hidden ">
           <section className="btn relative ">
             <span
               onClick={prevEL}
@@ -79,7 +79,13 @@ const currentProduct = products[Currentimage];
               </svg>
             </span>
           </section>
-          <div className="sliderContainer  image-container w-[390px]  h-[390px] shadow-md  relative">
+
+<main className="flex flex-wrap">
+
+
+
+          <div className="sliderContainer  image-container w-[390px] 
+           h-[390px]  relative">
             {products.map((product, index) => (
               <img
                 src={product.Img}
@@ -95,7 +101,7 @@ const currentProduct = products[Currentimage];
           </div>
 
 
-          <section className="desc px-6 mt-[3rem] lg:mt-[8rem]">
+          <section className="desc px-6 mt-[3rem]  lg:mt-[8rem]">
           <h4 className="uppercase text-orange-500 font-bold  my-1">
             Sneaker Company{" "}
           </h4>
@@ -110,7 +116,7 @@ const currentProduct = products[Currentimage];
             </p>
           </div>
 
-          <section className="price flex  justify-between my-6 lg:flex-col lg:flex">
+          <section className="price flex  justify-between my-6 lg:flex-col lg:flex md:flex-col md:flex">
             <div className="flex space-x-4">
               <h1 className="text-[1.6rem] font-bold">$125.00</h1>
               <h1 className="bg-orange-50 px-3 py-2 text-orange-600 font-semibold rounded-md">
@@ -140,93 +146,93 @@ const currentProduct = products[Currentimage];
           </section>
           </div>
         </section>
-
+        </main>
         </div>
    
 
  
-  <section className="imageGallery flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <section className="imageGallery mt-[8rem] flex justify-center w-full  ">
   
 
-<div>
-
-   
-   <section className="thumnailContainer mt-[4rem] hidden md:block lg:block mr-28">
-    <section className="fullImg">
-
-    <div className="w-[450px] h-[450px] fullimg">
-      <img src={imagesGallery[CurrentimageG]} alt=""  className="rounded-[20px]"/>
-    </div>
-    </section>
-
-    <section className="smallImg my-10 flex  space-x-10">
-
-      {imagesGallery.map((imgG, index) => (
-
-<div className="w-[80px] h-[80px] thumnail" key={index}>
-<img
-  src={imgG}
-  alt=""
-  className={`rounded-[6px] ${index === CurrentimageG ? "active" : ""} cursor-pointer`}
-  onClick={() => SetcurrentimageG(index)}
-/>
-</div>
-
-
-      ))}
+  <div className=" ">
   
-    </section>
-   </section>
-   </div>
-
-
-        <section className="desc px-6 mt-[0rem] lg:mt-[8rem] hidden lg:block">
-          <h4 className="uppercase text-orange-500 font-bold  my-1">
-            Sneaker Company{" "}
-          </h4>
-          <h1 className="uppercase text-[1.6rem] font-semibold lg:text-[2.3rem] lg:font-bold">
-            Fall Limited Edition <br />
-            Sneakers
-          </h1>
-          <div className="desc my-3 ">
-           <p> These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-            </p>
-          </div>
-
-          <section className="price flex  justify-between my-6 lg:flex-col lg:flex  md:flex-col md:flex">
-            <div className="flex space-x-4">
-              <h1 className="text-[1.6rem] font-bold">$125.00</h1>
-              <h1 className="bg-orange-50 px-3 py-2 text-orange-600 font-semibold rounded-md">
-                50%
-              </h1>
-            </div>
-            <h1 className=" line-through font-medium text-gray-400 ">
-              $250.00
+     
+     <section className="thumnailContainer mt-[4rem] hidden md:block lg:block ">
+      <section className="fullImg">
+  
+      <div className="w-[400px] h-[400px] fullimg">
+        <img src={imagesGallery[CurrentimageG]} alt=""  className="rounded-[20px]"/>
+      </div>
+      </section>
+  
+      <section className="smallImg my-10 flex  space-x-6">
+  
+        {imagesGallery.map((imgG, index) => (
+  
+  <div className="w-[80px] h-[80px] thumnail" key={index}>
+  <img
+    src={imgG}
+    alt=""
+    className={`rounded-[6px] ${index === CurrentimageG ? "active" : ""} cursor-pointer`}
+    onClick={() => SetcurrentimageG(index)}
+  />
+  </div>
+  
+  
+        ))}
+    
+      </section>
+     </section>
+     </div>
+  
+  
+          <section className="desc px-6 mt-[0rem] lg:mt-[5rem] md:block hidden   lg:pl-[4rem] w-[40%] lg:block">
+            <h4 className="uppercase text-orange-500 font-bold  my-1">
+              Sneaker Company{" "}
+            </h4>
+            <h1 className="uppercase text-[1.6rem] font-semibold lg:text-[2.3rem] lg:font-bold">
+              Fall Limited Edition <br />
+              Sneakers
             </h1>
-          </section>
-          <div className=" flex ">
-          <section className="btnContainer my-4 lg:my-0">
-            <div className="increase bg-slate-200 flex justify-between px-4 py-2 h-12
-             rounded-lg lg:w-[12rem]">
-              <h4 onClick={()=> {if (Qty > 1)SetQty(Qty-1)}} className=" cursor-pointer
-               text-orange-600 font-bold">-</h4>
-              <h4 className="font-bold">{Qty}</h4>
-              <h4  onClick={()=> SetQty(Qty+1)} className=" cursor-pointer text-orange-600 font-bold">+</h4>
+            <div className="desc my-3 ">
+             <p> These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand everything
+              the weather can offer.
+              </p>
+            </div>
+  
+            <section className="price flex  justify-between my-6 lg:flex-col lg:flex  md:flex-col md:flex">
+              <div className="flex space-x-4">
+                <h1 className="text-[1.6rem] font-bold">$125.00</h1>
+                <h1 className="bg-orange-50 px-3 py-2 text-orange-600 font-semibold rounded-md">
+                  50%
+                </h1>
+              </div>
+              <h1 className=" line-through font-medium text-gray-400 ">
+                $250.00
+              </h1>
+            </section>
+            <div className=" flex ">
+            <section className="btnContainer my-4 lg:my-0">
+              <div className="increase bg-slate-200 flex justify-between px-4 py-2 h-12
+               rounded-lg lg:w-[12rem]">
+                <h4 onClick={()=> {if (Qty > 1)SetQty(Qty-1)}} className=" cursor-pointer
+                 text-orange-600 font-bold">-</h4>
+                <h4 className="font-bold">{Qty}</h4>
+                <h4  onClick={()=> SetQty(Qty+1)} className=" cursor-pointer text-orange-600 font-bold">+</h4>
+              </div>
+            </section>
+            <section className="addtoCart mb-[8rem] ">
+              <button onClick={()=> addtoCart(currentProduct, Qty)} className="  bg-orange-600 
+               rounded-lg 
+               block w-full h-12 text-slate-100 font-medium cursor-pointer   lg:w-[12rem] lg:mx-4 lg:py-2">
+                Add to cart
+              </button>
+            </section>
             </div>
           </section>
-          <section className="addtoCart mb-[8rem] ">
-            <button onClick={()=> addtoCart(currentProduct, Qty)} className="  bg-orange-600 
-             rounded-lg 
-             block w-full h-12 text-slate-100 font-medium cursor-pointer   lg:w-[12rem] lg:mx-4 lg:py-2">
-              Add to cart
-            </button>
+  
           </section>
-          </div>
-        </section>
-
-        </section>
   
       </section>
 
