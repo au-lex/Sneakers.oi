@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }
@@ -101,3 +103,101 @@ li {
      .thumnail img:hover, .thumnail img.active {
        opacity: 1;
      }
+
+
+
+
+     @media screen and (min-width: 400px) {
+    
+
+      /* body {
+        background-color: red;
+    } */
+
+    .image-container     {
+    width: 500px;
+    margin-top: 1rem;
+    height: 400px;
+  }
+
+
+
+  
+  }
+
+
+     @media screen and (min-width: 425px) {
+    
+
+      /* body {
+        background-color: red;
+    } */
+
+    .image-container     {
+    width: 500px;
+    margin-top: 1rem;
+    /* height: 500px; */
+  }
+
+
+
+  
+  }
+
+
+
+  @media screen and (min-width: 500px) {
+    
+
+    /* body {
+      background-color: red;
+  } */
+
+  .image-container     {
+  width: 600px;
+  margin-top: 2.5rem;
+  /* height: 500px; */
+}
+
+
+
+
+}
+
+
+  @media screen and (min-width: 600px) {
+    
+
+    /* body {
+      background-color: red;
+  } */
+
+  .image-container     {
+  width: 600px;
+  margin-top: 2.5rem;
+  /* height: 500px; */
+}
+
+
+
+
+}
+
+
+@media screen and (min-width: 700px) {
+    
+
+  /* body {
+    background-color: red;
+} */
+
+.image-container     {
+width: 800px;
+margin-top: 2.5rem;
+height: 800px;
+}
+
+
+
+
+}
