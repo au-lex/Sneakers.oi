@@ -137,7 +137,7 @@ const currentProduct = products[Currentimage];
               <h4  onClick={()=> SetQty(Qty+1)} className=" cursor-pointer text-orange-600 font-bold">+</h4>
             </div>
           </section>
-          <section className="addtoCart mb-[8rem] ">
+          <section className="addtoCart mb-[0rem] ">
             <button onClick={()=> addtoCart(currentProduct, Qty)} className="  bg-orange-600 
              rounded-lg 
              block w-full h-12 text-slate-100 font-medium cursor-pointer   lg:w-[12rem] lg:mx-4 lg:py-2">
@@ -157,10 +157,10 @@ const currentProduct = products[Currentimage];
   <div className=" ">
   
      
-     <section className="thumnailContainer mt-[4rem] hidden md:block lg:block ">
-      <section className="fullImg">
+     <section className="thumnailContainer mt-[4rem] hidden md:block lg:block   ">
+      <section className="fullImg   ">
   
-      <div className="w-[400px] h-[400px] fullimg">
+      <div className="w-[400px] h-[400px md:px-[.4rem] fullimg">
         <img src={imagesGallery[CurrentimageG]} alt=""  className="rounded-[20px]"/>
       </div>
       </section>
@@ -186,7 +186,7 @@ const currentProduct = products[Currentimage];
      </div>
   
   
-          <section className="desc px-6 mt-[0rem] lg:mt-[5rem] md:block hidden   lg:pl-[4rem] w-[40%] lg:block">
+          <section className="desc px-6 mt-[0rem] lg:mt-[5rem] md:mt-[8rem] md:block hidden md:w-[60%]   lg:pl-[4rem] w-[40%] lg:block">
             <h4 className="uppercase text-orange-500 font-bold  my-1">
               Sneaker Company{" "}
             </h4>
@@ -212,10 +212,10 @@ const currentProduct = products[Currentimage];
                 $250.00
               </h1>
             </section>
-            <div className=" flex ">
+            <div className=" flex md:flex-wrap w-full ">
             <section className="btnContainer my-4 lg:my-0">
-              <div className="increase bg-slate-200 flex justify-between px-4 py-2 h-12
-               rounded-lg lg:w-[12rem]">
+              <div className="increase bg-slate-200 flex  justify-between px-4 py-2 h-12
+               rounded-lg md:w-[20rem] lg:w-[12rem]">
                 <h4 onClick={()=> {if (Qty > 1)SetQty(Qty-1)}} className=" cursor-pointer
                  text-orange-600 font-bold">-</h4>
                 <h4 className="font-bold">{Qty}</h4>
@@ -225,7 +225,7 @@ const currentProduct = products[Currentimage];
             <section className="addtoCart mb-[8rem] ">
               <button onClick={()=> addtoCart(currentProduct, Qty)} className="  bg-orange-600 
                rounded-lg 
-               block w-full h-12 text-slate-100 font-medium cursor-pointer   lg:w-[12rem] lg:mx-4 lg:py-2">
+               block w-full h-12 text-slate-100 font-medium cursor-pointer md:w-[20rem]  lg:w-[12rem] lg:mx-4 lg:py-2">
                 Add to cart
               </button>
             </section>

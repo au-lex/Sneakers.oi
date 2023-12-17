@@ -95,7 +95,6 @@ li {
 
 
 
-
    .thumnail img {
        opacity: 0.6;
       transition: opacity 0.3s ease;
@@ -103,6 +102,19 @@ li {
      .thumnail img:hover, .thumnail img.active {
        opacity: 1;
      }
+
+
+     .overlay {
+      transition: opacity 0.3s;
+    }
+    
+    .overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+  
+    
 
 
 
