@@ -115,7 +115,9 @@ const Header = ({ Cart, total, removeFromCart }) => {
                 className="openCart"
                 onClick={() => {
                   const cartItems = document.querySelector(".cartItems");
+                  const overlay = document.querySelector(".overlay");
                   cartItems.classList.toggle("open");
+                  overlay.classList.toggle("hidden");
                 }}
               >
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +135,8 @@ const Header = ({ Cart, total, removeFromCart }) => {
   />
 </svg>
 
-                <h2 className="absolute top-[-.5rem] left-2 bg-orange-500 cursor-pointer text-slate-50 py-[0px] px-[5px] text-[12px] rounded-full">
+                <h2 className="absolute top-[-.5rem] left-2 bg-orange-500 
+                cursor-pointer text-slate-50 py-[0px] px-[5px] text-[12px] rounded-full">
                   {Cart.length}
                 </h2>
               </span>
@@ -146,9 +149,21 @@ const Header = ({ Cart, total, removeFromCart }) => {
 
 
 <article></article>
+{/* <div className=" bg-red-500 inset-0"></div> */}
+
+<div
+  className="overlay hidden fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40"
+  onClick={() => {
+    const cartItems = document.querySelector(".cartItems");
+    const overlay = document.querySelector(".overlay");
+    cartItems.classList.remove("open");
+    overlay.classList.add("hidden");
+  }}
+></div>
+
         <section className="cartContainer relative flex justify-center">
 
-          <div className="cartItems w-[80%] px-4 py-4 h-[20rem] overflow-y-auto rounded-lg lg:w-[30rem] 
+          <div className="cartItems w-[90%] px-4 py-4 h-[20rem] overflow-y-auto rounded-lg lg:w-[30rem] 
          z-50 bg-slate-100 absolute    ">
             <h1 className="capitalize text-[1.4rem] font-bold border-b-2 border-gray-300 mb-1">
               cart
@@ -170,7 +185,20 @@ const Header = ({ Cart, total, removeFromCart }) => {
                         <h2 className="total font-extrabold">${(item.price * item.Qty).toFixed(2)}</h2>
                         <h2>
                           <span onClick={() => removeFromCart(index)}>
-                            <i className="ri-delete-bin-5-line text-gray-600"></i>
+                          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="h-6 w-6 text-gray-600"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
                           </span>
                         </h2>
                       </div>
